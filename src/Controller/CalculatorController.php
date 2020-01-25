@@ -20,8 +20,6 @@ class CalculatorController extends AbstractController
 
     /**
      * CalculatorController constructor.
-     *
-     * @param MathCalculator $calculator
      */
     public function __construct(MathCalculator $calculator)
     {

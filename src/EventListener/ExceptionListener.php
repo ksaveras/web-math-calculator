@@ -8,16 +8,13 @@ use App\Exception\CalculationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 /**
  * Class ExceptionListener.
  */
 class ExceptionListener
 {
-    /**
-     * @param ExceptionEvent $event
-     */
     public function onKernelException(ExceptionEvent $event): void
     {
         $exception = $event->getThrowable();

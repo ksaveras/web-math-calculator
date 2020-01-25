@@ -14,17 +14,12 @@ class CalcRequest implements InputModelInterface
      */
     private $expression = '';
 
-    /**
-     * @return string
-     */
     public function getExpression(): string
     {
         return $this->expression;
     }
 
     /**
-     * @param string $expression
-     *
      * @return $this
      */
     public function setExpression(string $expression): self

@@ -66,23 +66,18 @@ final class InputModelParamConverter implements ParamConverterInterface
      */
     public function supports(ParamConverter $configuration)
     {
-        if (null === $configuration->getClass()) {
+        if (empty($configuration->getClass())) {
             return false;
         }
 
         return \in_array(InputModelInterface::class, class_implements($configuration->getClass()), true);
     }
 
-    /**
-     * @param ParamConverter $configuration
-     *
-     * @return array
-     */
     private function getOptions(ParamConverter $configuration): array
     {
         return array_replace(
             [
-                'validate' => false
+                'validate' => false,
             ],
             $configuration->getOptions()
         );

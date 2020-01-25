@@ -19,17 +19,12 @@ class CalcResult
      */
     private $result;
 
-    /**
-     * @return string
-     */
     public function getExpression(): string
     {
         return $this->expression;
     }
 
     /**
-     * @param string $expression
-     *
      * @return $this
      */
     public function setExpression(string $expression): self
@@ -39,17 +34,12 @@ class CalcResult
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getResult(): string
     {
         return $this->result;
     }
 
     /**
-     * @param string $result
-     *
      * @return $this
      */
     public function setResult(string $result): self

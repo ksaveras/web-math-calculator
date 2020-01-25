@@ -12,9 +12,6 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
 
 class ValidationExceptionListener
 {
-    /**
-     * @param ExceptionEvent $event
-     */
     public function onKernelException(ExceptionEvent $event): void
     {
         $exception = $event->getThrowable();

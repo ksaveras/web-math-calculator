@@ -27,9 +27,6 @@ class ModelValidationException extends \RuntimeException
         $this->violationList = $violationList;
     }
 
-    /**
-     * @return ConstraintViolationListInterface
-     */
     public function getViolationList(): ConstraintViolationListInterface
     {
         return $this->violationList;
