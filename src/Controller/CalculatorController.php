@@ -29,14 +29,6 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/", name="home")
-     */
-    public function index(): Response
-    {
-        return $this->render('calculator/index.html.twig');
-    }
-
-    /**
      * @Route("/calculate", methods={"POST"})
      * @ParamConverter(name="request", options={"validate": true})
      */
