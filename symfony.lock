@@ -29,9 +29,6 @@
             "config/packages/dev/easy_log_handler.yaml"
         ]
     },
-    "egulias/email-validator": {
-        "version": "2.1.15"
-    },
     "ksaveras/math-calculator": {
         "version": "dev-master"
     },
@@ -165,9 +162,6 @@
             ".env"
         ]
     },
-    "symfony/form": {
-        "version": "v5.0.3"
-    },
     "symfony/framework-bundle": {
         "version": "4.4",
         "recipe": {
@@ -205,18 +199,6 @@
     },
     "symfony/intl": {
         "version": "v5.0.3"
-    },
-    "symfony/mailer": {
-        "version": "4.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.3",
-            "ref": "15658c2a0176cda2e7dba66276a2030b52bd81b2"
-        },
-        "files": [
-            "config/packages/mailer.yaml"
-        ]
     },
     "symfony/maker-bundle": {
         "version": "1.0",
@@ -258,9 +240,6 @@
         "files": [
             "config/packages/notifier.yaml"
         ]
-    },
-    "symfony/options-resolver": {
-        "version": "v5.0.3"
     },
     "symfony/phpunit-bridge": {
         "version": "4.3",
