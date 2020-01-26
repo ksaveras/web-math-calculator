@@ -77,7 +77,6 @@ class InputModelParamConverterTest extends TestCase
         $payload = $request->attributes->get('payload');
         $this->assertInstanceOf(TestingModel::class, $payload);
         $this->assertEquals('testing data', $payload->getTitle());
-
     }
 
     /**
