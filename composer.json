@@ -65,8 +65,10 @@
         "symfony/polyfill-php56": "*"
     },
     "scripts": {
+        "test": "@php ./bin/phpunit",
         "phpcsfix": "@php ./vendor/bin/php-cs-fixer fix",
         "phpcscheck": "@php ./vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format=udiff",
+        "phpstan": "@php ./vendor/bin/phpstan analyse src",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
