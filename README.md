@@ -1,4 +1,5 @@
 # Simple Web Math Calculator
+[![Build Status](https://travis-ci.com/ksaveras/web-math-calculator.svg?branch=master)](https://travis-ci.com/ksaveras/web-math-calculator)
 
 ### Stack
 * Symfony 5.0
