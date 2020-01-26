@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "./Input";
+import Results from "./Results";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,9 +20,10 @@ export default class App extends React.Component {
   }
 
   calculate() {
-    // if (this.state.expression.trim().length === 0) {
-    //   return;
-    // }
+    if (this.state.expression.trim().length === 0) {
+      alert('Math expression can not be empty');
+      return;
+    }
 
     fetch('/calculate', {
       method: 'POST',
@@ -55,19 +57,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const answers = this.state.history.join("\n");
-
     return (
-      <div>
-        <div>
-          <h2>Simple Math Calculator</h2>
-          <div>
-            <div className="pb-2">
-              <textarea className="form-control no-resize" readOnly={true} rows="10" value={answers}/>
-            </div>
-          </div>
+      <div className="card">
+        <div className="card-body">
+          <h3 className="card-title">Simple Math Calculator</h3>
+          <Results answers={this.state.history}/>
+          <Input value={this.state.expression} changeHandler={this.onChange} clickHandler={this.calculate}/>
         </div>
-        <Input value={this.state.expression} changeHandler={this.onChange} clickHandler={this.calculate}/>
       </div>
     )
   }
