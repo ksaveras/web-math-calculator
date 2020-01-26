@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Exception\CalculationException;
 use App\Model\CalcRequest;
-use App\Model\CalcResult;
-use Ksaveras\MathCalculator\MathCalculator;
+use App\Service\Calculator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,14 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class CalculatorController extends AbstractController
 {
     /**
-     * @var MathCalculator
+     * @var Calculator
      */
     private $calculator;
 
     /**
      * CalculatorController constructor.
      */
-    public function __construct(MathCalculator $calculator)
+    public function __construct(Calculator $calculator)
     {
         $this->calculator = $calculator;
     }
@@ -32,14 +30,6 @@ class CalculatorController extends AbstractController
      */
     public function calculate(CalcRequest $request): Response
     {
-        try {
-            $result = new CalcResult();
-            $result->setExpression($request->getExpression());
-            $result->setResult($this->calculator->calculate($request->getExpression()));
-        } catch (\Exception $exception) {
-            throw new CalculationException($exception->getMessage());
-        }
-
-        return $this->json($result);
+        return $this->json($this->calculator->calculate($request));
     }
 }
