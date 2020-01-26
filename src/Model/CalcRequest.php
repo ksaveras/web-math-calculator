@@ -6,6 +6,8 @@ namespace App\Model;
 
 /**
  * Class CalcRequest.
+ *
+ * @codeCoverageIgnore
  */
 class CalcRequest implements InputModelInterface
 {

@@ -6,6 +6,8 @@ namespace App\Model;
 
 /**
  * Class CalcResult.
+ *
+ * @codeCoverageIgnore
  */
 class CalcResult
 {
