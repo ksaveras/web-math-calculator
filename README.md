@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/ksaveras/web-math-calculator.svg?branch=master)](https://travis-ci.com/ksaveras/web-math-calculator)
 
 ### Stack
-* Symfony 5.0
+* Symfony 5.1
 * Math Calculator 0.1
 * React 16
 
