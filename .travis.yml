@@ -20,6 +20,7 @@ cache:
 
 before_install: # if "install" is overridden
   # Repo for Yarn
+  - sudo rm -rf ~/.nvm
   - curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | sudo -E bash -
   - sudo apt-get install -y nodejs
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
