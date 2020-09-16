@@ -4,6 +4,14 @@
 /node_modules/
 /tests/
 /var/cache
+/var/log
 /vendor/
+.env.test
+.gitignore
+.php_cs.cache
+.php_cs.dist
+.phpunit.result.cache
+.travis.yml
 phpstan.neon
 phpunit.xml.dist
+yarn-error.log
