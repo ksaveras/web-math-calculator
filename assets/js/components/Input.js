@@ -21,7 +21,9 @@ const Input = (props) => {
           />
         </div>
         <div className="form-group col-md-3">
-          <button className="btn btn-lg btn-block btn-primary">=</button>
+          <button className="btn btn-lg btn-block btn-primary">
+            Calculate
+          </button>
         </div>
       </div>
     </form>
