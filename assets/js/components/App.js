@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "./Input";
 import Results from "./Results";
+import axios from "axios";
 
 const App = () => {
   const [history, setHistory] = useState([]);
@@ -11,29 +12,17 @@ const App = () => {
       return;
     }
 
-    fetch("/calculate", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        expression,
-      }),
-    })
-      .then((response) => Promise.all([response.ok, response.json()]))
-      .then(([responseOk, body]) => {
-        if (responseOk) {
-          const mathResult = body.expression + " = " + body.result;
-          appendResult(mathResult);
-        } else {
-          const { message = "Unknown error occurred" } = body;
-          throw new Error(message);
-        }
+    axios
+      .post("/calculate", { expression })
+      .then((response) => {
+        const { expression, result } = response.data;
+        appendResult(`${expression} = ${result}`);
       })
-      .catch((e) => {
-        const mathResult = expression + " = ERROR " + e.message;
-        appendResult(mathResult);
+      .catch((error) => {
+        const { message = "Unknown error occurred" } = error.response.data;
+        appendResult(
+          `${expression} = ERROR (${error.response.status} ${error.response.statusText}) ${message}`
+        );
       });
   };
 
