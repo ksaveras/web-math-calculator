@@ -2,8 +2,15 @@
     "devDependencies": {
         "@babel/preset-react": "^7.10.4",
         "@symfony/webpack-encore": "^0.31.0",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "^26.3.0",
         "core-js": "^3.6.5",
+        "eslint": "^7.9.0",
+        "eslint-plugin-react": "^7.20.6",
+        "jest": "^26.4.2",
         "node-sass": "^4.14.1",
+        "prettier": "2.1.2",
+        "react-test-renderer": "^16.13.1",
         "regenerator-runtime": "^0.13.7",
         "sass-loader": "^10.0.2",
         "webpack-notifier": "^1.8.0"
