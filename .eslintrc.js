@@ -7,15 +7,13 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     sourceType: "module",
   },
-  plugins: ['react'],
-  rules: {
-    
-  }
-}
+  plugins: ["react", "react-hooks"],
+  rules: {},
+};
