@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "./Input";
 import Results from "./Results";
-import axios from "axios";
+import calculateApi from "../api/api";
 
 const App = () => {
   const [history, setHistory] = useState([]);
@@ -12,22 +12,9 @@ const App = () => {
       return;
     }
 
-    axios
-      .post("/calculate", { expression })
-      .then((response) => {
-        const { expression, result } = response.data;
-        appendResult(`${expression} = ${result}`);
-      })
-      .catch((error) => {
-        const { message = "Unknown error occurred" } = error.response.data;
-        appendResult(
-          `${expression} = ERROR (${error.response.status} ${error.response.statusText}) ${message}`
-        );
-      });
-  };
-
-  const appendResult = (mathResult) => {
-    setHistory([...history, mathResult]);
+    calculateApi(expression).then((result) => {
+      setHistory([...history, `${expression} = ${result}`]);
+    });
   };
 
   return (
